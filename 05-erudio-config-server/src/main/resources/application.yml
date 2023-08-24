@@ -1,11 +1,15 @@
+server:
+  port: 8888
 spring:
   application:
-    name: greeting-service
-management:
-    web:
-      exposure:
-        include:
-        - '*'
-greeting-service:
-  greeting: "Hello"
-  default-value: "World"    
+    name: erduio-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:jonasmendoncasilva/erudio-config-server-files
+          username: jonasmendoncasilva
+          password: jon fel98
+          default-label: main
+          search-paths: 
+          - 'greeting-service*'
